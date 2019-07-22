@@ -1,2 +1,2 @@
 # Tip-Calculator-Java-Swing
-This app experiments with building a UI using Java.SWING 
+An UI for computing tips based on bill amounts, preferred percentage, and round-tip option. Built UI by implementing Java.Swing
