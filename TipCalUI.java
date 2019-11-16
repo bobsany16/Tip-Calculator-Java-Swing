@@ -3,7 +3,6 @@ import java.awt.Dimension;
 import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -12,7 +11,7 @@ import javax.swing.JTextField;
 import javax.swing.SpringLayout;
 
 /**
- * This class is a minimalist user interface for tip calculator
+ * User interface for tip calculator
  * 
  * @author Bobby Nguyen
  * @version April 10th 2019
@@ -106,7 +105,7 @@ public class TipCalUI implements ActionListener {
 
 		JLabel percentTipOutLabel = new JLabel("You tipped:", JLabel.CENTER);
 		JPanel c = new JPanel();
-		c.setBounds(75, 260, 150, 40);
+		c.setBounds(75, 260, 180, 70);
 		percentTipOutField = new JTextField();
 		percentTipOutField.setPreferredSize(new Dimension(75, 30));
 		c.add(percentTipOutLabel);

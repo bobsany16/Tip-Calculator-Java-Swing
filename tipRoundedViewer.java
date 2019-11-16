@@ -28,8 +28,6 @@ public class tipRoundedViewer implements ModelObserver {
 	 */
 	@Override
 	public void update(TipModel a) {
-//		double b = a.getRoundedTip();
-//		outputField.setText("$" + b);
 		
 		double b = a.getRoundedTip();
 		outputField.setText("$" + a.formatNumber(b, 2));

@@ -1,2 +1,5 @@
 #ignore these files
 *.class
+.classpath
+.project
+.vscode/launch.json

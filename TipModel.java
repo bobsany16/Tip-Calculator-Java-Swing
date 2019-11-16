@@ -1,14 +1,13 @@
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Observable;
 import java.util.Observer;
 
 /**
- * This class serves as a model for TipCalculator MVC
+ * This class handles the logic behind Tip Calculator
  * 
  * @author Bobby Nguyen
- * @version April 10th 2019
+ * @version November 16 2019
  *
  */
 public class TipModel {
@@ -21,7 +20,7 @@ public class TipModel {
 																			// observers
 
 	/**
-	 * adds its parameter to list of observers
+	 * Adds parameter to list of observers
 	 * 
 	 * @param m ModelObserver
 	 */
@@ -38,16 +37,15 @@ public class TipModel {
 		}
 	}
 
-	// setters ALL need to call notifyObservers when complete
-
 	/**
-	 * This method stores data to totalBill
+	 * This method stores data to totalBill instance variable
+	 * and calls notifyObservers()
 	 * 
 	 * @param amount value entered in GUI for total bill amount
 	 */
 	public void setTotalBill(double amount) {
 		this.totalBill = amount;
-		notifyObservers();
+		notifyObservers(); 
 
 	}
 
@@ -61,7 +59,8 @@ public class TipModel {
 	}
 
 	/**
-	 * this method stores percent data to tipPercentage
+	 * This method stores percent data to tipPercentage
+	 * and calls notifyObservers()
 	 * 
 	 * @param percent value entered in GUI for percentage
 	 */
@@ -83,6 +82,7 @@ public class TipModel {
 
 	/**
 	 * This method store quantum data to TipQuantum
+	 * and calls notifyObservers()
 	 * 
 	 * @param quantum the value entered in GUI
 	 */
@@ -101,7 +101,7 @@ public class TipModel {
 	}
 
 	/**
-	 * Allows to calculate the tip amount
+	 * Main method to calculate the tip amount
 	 * 
 	 * @param baseAmount the bill amount entered
 	 * @param percentage the percentage user tip
@@ -111,7 +111,7 @@ public class TipModel {
 	public double calcTip(double baseAmount, double percentage) {
 		double result1 = 0.0;
 		if ((baseAmount < 0.0) || (percentage < 0.0)) {
-			throw new IllegalArgumentException("Can't compute due to negative value.");
+			throw new IllegalArgumentException("Can't compute due to negative values.");
 		} else {
 			result1 = baseAmount * percentage;
 		}
@@ -177,9 +177,9 @@ public class TipModel {
 	}
 
 	/**
-	 * Method to combine all three data into 1 string to test temporarily
+	 * Method to combine all three data into one string to test temporarily
 	 * 
-	 * @return resultToStr result in 1 string of three data values
+	 * @return resultToStr result in one string of three data values
 	 */
 	public String toString() {
 		String resultToStr = Double.toString(totalBill) + Double.toString(tipPercentage) + Double.toString(tipQuantum);
