@@ -20,7 +20,7 @@ import javax.swing.SpringLayout;
 public class TipCalUI implements ActionListener {
 	private JFrame frame;
 	private JButton calculate;
-	private JTextField amountTipField;
+	private JTextField totalAmountToTip;
 	private JTextField percentField;
 	private JTextField roundField;
 	private JTextField tipOutField;
@@ -47,7 +47,7 @@ public class TipCalUI implements ActionListener {
 		m = new TipModel();
 		initialize();
 		calculate.addActionListener(this);
-		amountTipField.addActionListener(this);
+		totalAmountToTip.addActionListener(this);
 		percentField.addActionListener(this);
 		roundField.addActionListener(this);
 		roundedTip = new tipRoundedViewer(tipOutField);
@@ -66,11 +66,11 @@ public class TipCalUI implements ActionListener {
 		JLabel amtLabel = new JLabel("Amount:", JLabel.CENTER);
 		JPanel l = new JPanel();
 		l.setBounds(75, 10, 150, 40);
-		amountTipField = new JTextField();
-		amountTipField.setPreferredSize(new Dimension(75, 30));
-		amountTipField.setActionCommand("Enter");
+		totalAmountToTip = new JTextField();
+		totalAmountToTip.setPreferredSize(new Dimension(75, 30));
+		totalAmountToTip.setActionCommand("Enter");
 		l.add(amtLabel);
-		l.add(amountTipField);
+		l.add(totalAmountToTip);
 
 		JLabel percentLabel = new JLabel("Percent:", JLabel.CENTER);
 		JPanel h = new JPanel();
@@ -130,7 +130,7 @@ public class TipCalUI implements ActionListener {
 		// "set" the appropriate method of the model
 
 		if (arg0.getActionCommand().equals("calculate")) {
-			m.setTotalBill(Double.parseDouble(amountTipField.getText()));
+			m.setTotalBill(Double.parseDouble(totalAmountToTip.getText()));
 			m.setTipPercent(Double.parseDouble(percentField.getText()));
 			m.setTipQuantum(Double.parseDouble(roundField.getText()));
 

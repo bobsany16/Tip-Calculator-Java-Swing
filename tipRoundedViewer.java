@@ -4,12 +4,12 @@ import javax.swing.JTextField;
  * This class acts as a viewer for rounded tip amount for the Controller
  * 
  * @author Bobby Nguyen
- * @version April 10th 2019
+ * @version November 19, 2019
  *
  */
 public class tipRoundedViewer implements ModelObserver {
 
-	private JTextField outputField;
+	private JTextField tipOutPutField;
 
 	/**
 	 * Initializes outputField
@@ -17,7 +17,7 @@ public class tipRoundedViewer implements ModelObserver {
 	 * @param myOutput JTextField for output of rounded tip amount
 	 */
 	public tipRoundedViewer(JTextField myOutput) {
-		outputField = myOutput;
+		tipOutPutField = myOutput;
 	}
 
 	/**
@@ -30,7 +30,7 @@ public class tipRoundedViewer implements ModelObserver {
 	public void update(TipModel a) {
 		
 		double b = a.getRoundedTip();
-		outputField.setText("$" + a.formatNumber(b, 2));
+		tipOutPutField.setText("$" + a.formatNumber(b, 2));
 
 	}
 

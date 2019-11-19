@@ -15,7 +15,6 @@ public class TipModel {
 	private double tipPercentage;
 	private double tipQuantum;
 	private double tipOut;
-	private double effPercentOut;
 	private List<ModelObserver> observers = new ArrayList<ModelObserver>();// Need instance variable for List of
 																			// observers
 
@@ -130,7 +129,7 @@ public class TipModel {
 		if ((tipCalculated < 0) || (tipQuantum < 0)) {
 			throw new IllegalArgumentException("Can't round due to negative value.");
 		} else {
-			if (overage > (tipQuantum / 2)) {
+			if (overage >= (tipQuantum / 2)) {
 				tipCalculated += (tipQuantum - overage);
 			} else if (overage < (tipQuantum / 2)) {
 				tipCalculated -= overage;
@@ -174,18 +173,6 @@ public class TipModel {
 	public double getEffectiveTipPercentage() {
 
 		return (getRoundedTip() / getTotalBill()) * 100;
-	}
-
-	/**
-	 * Method to combine all three data into one string to test temporarily
-	 * 
-	 * @return resultToStr result in one string of three data values
-	 */
-	public String toString() {
-		String resultToStr = Double.toString(totalBill) + Double.toString(tipPercentage) + Double.toString(tipQuantum);
-
-		return resultToStr;
-
 	}
 
 }
