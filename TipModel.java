@@ -4,7 +4,9 @@ import java.util.Observable;
 import java.util.Observer;
 
 /**
- * This class handles the logic behind Tip Calculator
+ * This class acts as the model handling the logic behind Tip Calculator. The
+ * model takes in input from the User Interface/Controller and updates the
+ * viewer to display new results
  * 
  * @author Bobby Nguyen
  * @version November 16 2019
@@ -19,7 +21,7 @@ public class TipModel {
 																			// observers
 
 	/**
-	 * Adds parameter to list of observers
+	 * Adds observers into the model
 	 * 
 	 * @param m ModelObserver
 	 */
@@ -37,14 +39,14 @@ public class TipModel {
 	}
 
 	/**
-	 * This method stores data to totalBill instance variable
-	 * and calls notifyObservers()
+	 * This method stores data to totalBill instance variable and calls
+	 * notifyObservers()
 	 * 
 	 * @param amount value entered in GUI for total bill amount
 	 */
 	public void setTotalBill(double amount) {
 		this.totalBill = amount;
-		notifyObservers(); 
+		notifyObservers();
 
 	}
 
@@ -58,8 +60,7 @@ public class TipModel {
 	}
 
 	/**
-	 * This method stores percent data to tipPercentage
-	 * and calls notifyObservers()
+	 * This method stores percent data to tipPercentage and calls notifyObservers()
 	 * 
 	 * @param percent value entered in GUI for percentage
 	 */
@@ -80,8 +81,7 @@ public class TipModel {
 	}
 
 	/**
-	 * This method store quantum data to TipQuantum
-	 * and calls notifyObservers()
+	 * This method store quantum data to TipQuantum and calls notifyObservers()
 	 * 
 	 * @param quantum the value entered in GUI
 	 */
@@ -145,8 +145,6 @@ public class TipModel {
 	 * 
 	 * @param num           the rounded tip amount
 	 * @param decimalDigits the number of decimal digits to format number
-	 * @see https://www.baeldung.com/java-round-decimal-number how to round number
-	 *      to n decimal digits
 	 * @return string result final amount when number is formatted
 	 */
 	public String formatNumber(double num, int decimalDigits) {

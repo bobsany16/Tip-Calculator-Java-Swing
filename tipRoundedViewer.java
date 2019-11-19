@@ -1,7 +1,8 @@
 import javax.swing.JTextField;
 
 /**
- * This class acts as a viewer for rounded tip amount for the Controller
+ * This class acts as a viewer for rounded tip amount for the User
+ * Interface/Controller
  * 
  * @author Bobby Nguyen
  * @version November 19, 2019
@@ -24,11 +25,11 @@ public class tipRoundedViewer implements ModelObserver {
 	 * Method to update the rounded tip textfield once there are changes in the
 	 * model
 	 * 
-	 * @param TipModel a a TipModel
+	 * @param a The associated Tip Model
 	 */
 	@Override
 	public void update(TipModel a) {
-		
+
 		double b = a.getRoundedTip();
 		tipOutPutField.setText("$" + a.formatNumber(b, 2));
 

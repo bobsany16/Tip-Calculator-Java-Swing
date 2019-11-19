@@ -1,8 +1,8 @@
 import javax.swing.JTextField;
 
 /**
- * This class acts as a viewer for Effective Percentage Amount for the
- * Controller
+ * This class acts as a viewer for Effective Percentage Amount for the User
+ * Interface/Controller
  * 
  * @author Bobby Nguyen
  * @version April 10th 2019
@@ -22,7 +22,7 @@ public class effPercentViewer implements ModelObserver {
 	/**
 	 * Method to update the textfield once there are changes in the model
 	 * 
-	 * @param TipModel h a tipmodel
+	 * @param h The associated Tip Model
 	 */
 	@Override
 	public void update(TipModel h) {

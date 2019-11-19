@@ -11,7 +11,8 @@ import javax.swing.JTextField;
 import javax.swing.SpringLayout;
 
 /**
- * User interface for tip calculator
+ * User interface for Tip Calculator. Acts as the Controller for the Tip
+ * Calculator application
  * 
  * @author Bobby Nguyen
  * @version April 10th 2019
@@ -43,6 +44,9 @@ public class TipCalUI implements ActionListener {
 
 	}
 
+	/**
+	 * Constructor for User Interface
+	 */
 	public TipCalUI() {
 		m = new TipModel();
 		initialize();
@@ -56,6 +60,9 @@ public class TipCalUI implements ActionListener {
 		m.addObserver(effPercentOut);
 	}
 
+	/**
+	 * Sets up necessary text fields and frame for the User Interface
+	 */
 	public void initialize() {
 
 		frame = new JFrame("Tip Calculator");
@@ -122,13 +129,13 @@ public class TipCalUI implements ActionListener {
 
 	}
 
+	/*
+	 * Method to carry out tip calculation once user hits 'Calculate' button. The
+	 * User Interface/Controller will send input from user to the model to be
+	 * computed.
+	 */
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
-		// One for each field (named)
-		// get the text from the field
-		// convert it to a double
-		// "set" the appropriate method of the model
-
 		if (arg0.getActionCommand().equals("calculate")) {
 			m.setTotalBill(Double.parseDouble(totalAmountToTip.getText()));
 			m.setTipPercent(Double.parseDouble(percentField.getText()));
